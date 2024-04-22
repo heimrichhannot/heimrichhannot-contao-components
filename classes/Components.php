@@ -58,9 +58,9 @@ class Components extends \Frontend
             return false;
         }
 
-        $arrJs      = is_array($GLOBALS['TL_JAVASCRIPT']) ? $GLOBALS['TL_JAVASCRIPT'] : [];
-        $arrUserCss = is_array($GLOBALS['TL_USER_CSS']) ? $GLOBALS['TL_USER_CSS'] : [];
-        $arrCss     = is_array($GLOBALS['TL_CSS']) ? $GLOBALS['TL_CSS'] : [];
+        $arrJs      = is_array($GLOBALS['TL_JAVASCRIPT'] ?? null) ? $GLOBALS['TL_JAVASCRIPT'] : [];
+        $arrUserCss = is_array($GLOBALS['TL_USER_CSS'] ?? null) ? $GLOBALS['TL_USER_CSS'] : [];
+        $arrCss     = is_array($GLOBALS['TL_CSS'] ?? null) ? $GLOBALS['TL_CSS'] : [];
 
         foreach ($disabled as $key => $arrComponent) {
             $arrJs      = static::removeAssets($arrComponent['js'] ?? [], $arrJs);
